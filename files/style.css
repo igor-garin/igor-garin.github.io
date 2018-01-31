@@ -1366,6 +1366,17 @@ input[name=capcha] {
     color: #fff
 }
 
+.search-block__btn-img {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.search-block__btn-img .img {
+    height: 40px;
+}
+
 .search-block .search-block__btn {
     flex-shrink: 0;
     width: 246px;

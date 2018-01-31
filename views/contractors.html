@@ -2,30 +2,38 @@
    <div class="page-wrap page-wrap_report">
       <div class="page-wrap__wrap">
          <form id="check-head" _lpchecked="1">
-            <div class="form-search">
+            <div class="form-search" id="snap_vin_searh">
+               <span class="ic-info__title">
+                  VIN
+               </span>
                <div class="form-search__wrap">
                   <div class="search-block">
+                     
                      <div class="search-block__rel search-block__rel_active" data-rel="GRZ">
-                        <input type="text" class="search-block__field-search js-gos" placeholder="A 007 AA | 197" value="" maxlength="14" id="form3162">
+                        <input type="text" class="search-block__field-search js-gos" placeholder="VIN" value="" maxlength="14" id="form316222" ng-model="vin">
                      </div>
-                     <button class="search-block__btn-search"><span>Snap VIN</span></button>
+                     <button class="search-block__btn-search" id="snap_vin_show_button"><span>Snap VIN</span></button>
                   </div>
                </div>
             </div>
-            <div class="post-bl" style="position: relative;">
+         </form>
+         <form id="check-head" _lpchecked="1" ng-submit="addRecord(vin, carType, date, milage, comment)">
+            <input type="text" id="addRecord_vin" ng-model="vin" style="display: none">
+            <input type="number" id="addRecord_carType" ng-model="carType" style="display: none">
+            <div class="post-bl" style="position: relative; display: none" id="snap_vin_show">
                <div class="post-bl__main-request">
                   <div class="post-text">
                      <div class="post-text__head">
                         <div class="ls-info">
                            <div class="ls-info__left">
-                              <h1 class="r-title">
+                              <h1 class="r-title" id="snap_vin_name">
                                  AUDI A6 2011
                               </h1>
                            </div>
                         </div>
                         <div class="vin-info">
                            <div class="vin-info__left">
-                              <b class="vin-rc">
+                              <b class="vin-rc" id="snap_vin_vin">
                               VIN: WAUZZZ4G5CN021391
                               </b>
                            </div>
@@ -34,14 +42,22 @@
                   </div>
                </div>
             </div>
-            <div class="drop">
-               <div class="valign"><b>Select Your Course</b></div>
-               <a href="#" class="drop-list"><i class="fa fa-caret-down"></i></a>
-               <span class="filter-button">
-               <a href="">Milage</a>
-               <a href="">Service</a>
-               <a href="">Accident</a>
-               </span>
+            <span class="ic-info__title">
+                  Record Type
+            </span>
+            <div class="search-block">
+               <div class="drop">
+                  <div class="valign"><b id="milage_id">Milage</b></div>
+                  <a href="#" class="drop-list"><i class="fa fa-caret-down"></i></a>
+                  <span class="filter-button">
+                  <a href="">Milage</a>
+                  <a href="">Service</a>
+                  <a href="">Accident</a>
+                  </span>
+               </div>
+               <div class="search-block__btn-img">
+                  <img src="img/icon_milage.png" id="rec_type_img"/>
+               </div>
             </div>
             <span class="ic-info__title">
             Date of service
@@ -49,7 +65,7 @@
             <div class="form-search__wrap">
                <div class="search-block">
                   <div class="date-wrap search-block__rel search-block__rel_active" data-rel="GRZ">
-                     <input type="text" placeholder="Date of service" class="datepicker">
+                     <input type="text" placeholder="Date of service" class="datepicker" ng-model="date">
                      <img src="img/calendar.png" alt="calendar">
                   </div>
                   <button type="submit" class="search-block__btn-search"><span>Add service record</span></button>
@@ -58,12 +74,18 @@
             <span class="ic-info__title">
             Milage
             </span>
-            <input type="text" class="search-block__field-search js-gos" placeholder="A 007 AA | 197" value="" maxlength="14" id="form3162">
+            <input type="text" class="search-block__field-search js-gos" placeholder="Milage" value="" maxlength="14" id="form325162" ng-model="milage">
             <span class="ic-info__title">
             Comments
             </span>
-            <input type="text" class="search-block__field-search js-gos" placeholder="A 007 AA | 197" value="" maxlength="14" id="form3162">
+            <input type="text" class="search-block__field-search js-gos" placeholder="Comments" value="" maxlength="14" id="form386162" ng-model="comment">
          </form>
       </div>
    </div>
 </div>
+ <!-- <script src="./files/libs.min.js"></script> -->
+ <script src="js/jquery.mixitup.min.js"></script>
+ <script src="js/jquery-ui.min.js"></script>
+ <!-- <script src="js/bootstrap.min.js"></script> -->
+ <script src="js/idangerous.swiper.min.js"></script>
+ <script src="js/all.js"></script>

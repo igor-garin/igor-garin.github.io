@@ -24,7 +24,7 @@ var Vin = {
       // Set the provider for our contract
       Vin.contracts.VinConrtact.setProvider(Vin.web3Provider);
 
-      Vin.contracts.VinConrtact.at("0xaf8b0c90b74c6c4d2e53a114206088c01c6f3849").then(callback);
+      Vin.contracts.VinConrtact.at("0xf912106838462f869495c29b89a0f326b33f91d2").then(callback);
     });
   }
 };
@@ -78,5 +78,8 @@ var carsArray = {
   14: "Huyndai Elantra 2014", 
   15: "Ford Focus 2016", 
   16: "Kia Soul",
-  17: "Mazda CX-3 2017"
+  17: "Mazda CX-3 2017",
+  18: "Mazda CX-3 2017"
 }
+
+var carsMapping = {};

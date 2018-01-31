@@ -90,8 +90,7 @@ app.controller("MainController", function ($scope) {
         }
 
         $scope.getVinInfo = function(vin) {
-            if (!vin || vin.length == 0) {
-                showErrorDialog("error.message");
+            if ($('#form3162').val().length === 0) {
                 return;
             }
 
