@@ -76,7 +76,7 @@ ol.name-value li span {
 .modal {
     display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 2000; /* Sit on top */
+    z-index: 5000; /* Sit on top */
     padding-top: 200px; /* Location of the box */
     left: 0;
     top: 0;
