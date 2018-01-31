@@ -1,0 +1,64 @@
+<div class="row" ng-show="!loading">
+    <div class="col-lg-6">
+        <h1>Contractors</h1>
+        <form ng-submit="changePermission(address, flag)">
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="0x0123456..." ng-model="address">
+
+            </div>
+            <div class="form-group">
+                <select ng-init="flag = allowDisallows[0]" ng-model="flag" id="allowDisallow">
+                    <option ng-repeat="allowDisallow in allowDisallows">{{allowDisallow}}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+        </br>
+
+        <h1>Withdraw</h1>
+        <form ng-submit="withdrawFunds(address, amount)">
+            <div class="form-group">
+                <label for="addressRecipient">Address To</label>
+                <input type="text" ng-model="address" class="form-control" id="addressRecipient" placeholder="0x123456...">
+            </div>
+            <div class="form-group">
+                <label for="amountInEther1">Amount in Ether</label>
+                <input type="number" step="0.0001" class="form-control" id="amountInEther1" placeholder="1" ng-model="amount">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+    </div>
+    <div class="col-lg-6">
+
+
+        <h1>Add VIN</h1>
+        <form ng-submit="addVin(vin, info)">
+            <div class="form-group">
+                <label for="vin">VIN</label>
+                <input type="text" class="form-control" id="vin" placeholder="0123456..." ng-model="vin">
+
+            </div>
+            <div class="form-group">
+                <label for="info">Info</label>
+                <input type="text" class="form-control" id="info" placeholder="" ng-model="info">
+            </div>
+            <button type="submit" class="btn btn-default">Add</button>
+        </form>
+    </div>
+
+</div>
+</br>
+
+
+<div ng-show="error">
+    <div class="alert alert-warning" role="alert">{{error}}</div>
+</div>
+<div ng-show="loading">
+    <div class="alert alert-notice" role="alert">Loading...</div>
+</div>
+<div ng-show="success">
+    <div class="alert alert-success" role="alert">Success!</div>
+</div>

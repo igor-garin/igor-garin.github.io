@@ -1,0 +1,77 @@
+<html ng-app="mySimpleWalletDapp">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>VIN service</title>
+      <!-- <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />   -->         
+      <link href="css/helper.css" rel="stylesheet" type="text/css" />
+      <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+      <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+      <link href="css/jquery-ui.theme.min.css" rel="stylesheet" type="text/css" />
+      <link href="./files/css.css" rel="stylesheet">
+      <link rel="stylesheet" href="./files/style.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="./jss/web3.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+      <script src="./jss/truffle-contract.js"></script>
+      <script src="./jss/app.js"></script>
+      <script src="./jss/controller_main.js"></script>
+      <script src="./jss/controller_contractors.js"></script>
+      <script src="./jss/controller_managements.js"></script>
+   </head>
+   <body>
+      <div class="mainwrapper">
+         <div class="header-line">
+            <div class="header-line__wrap">
+               <div class="header-line__left">
+                  <a href="#" class="open-nav" style="display: none"><span></span></a>
+                  <a ng-href="/index.html#" class="main-logo" style="display: block"></a>
+                  <nav class="nav-line">
+                     <a ng-href="/index.html#!/management" class="nav-line__link" style="display: none;" id="a_managment">Manage Services</a>
+                     <a ng-href="/index.html#!/contractors" class="nav-line__link" style="display: none;" id="a_contract">Update Record</a>
+                  </nav>
+               </div>
+            </div>
+         </div>
+         <div class="header-nav">
+            <div class="header-nav__wrap">
+               <div class="f-nav">
+                  <div class="f-nav__bold" style="display: none;" id="a_managment">
+                     <a ng-href="/index.html#!/management">Manage Services</a>
+                  </div>
+                  <div class="f-nav__bold" style="display: none;" id="a_contract">
+                     <a ng-href="/index.html#!/contractors">Update Record</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div ng-view></div>
+      </div>
+      <div id="LoadModal" class="load_modal" style="display: none">
+         <img src="img/loading.gif" alt="requesr in progress">
+      </div>
+      <!-- The Error Modal -->
+      <div id="ErroModal" class="modal" style="display: none">
+         <!-- Modal content -->
+         <div class="contact-form">
+            <span class="close" id="close_error">&times;</span>
+            <div class="form-header-error">
+               <h3 id="error_info">No info availible for requested VIN code</h3>
+            </div>
+            <form>
+               <div class="send-button">
+                  <input type="submit" id="submit_error" value="OK">
+               </div>
+            </form>
+         </div>
+      </div>
+      <!-- <script src="./files/libs.min.js"></script> -->
+      <script src="js/jquery.mixitup.min.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <!-- <script src="js/bootstrap.min.js"></script> -->
+      <script src="js/idangerous.swiper.min.js"></script>
+      <script src="js/all.js"></script>
+   </body>
+</html>

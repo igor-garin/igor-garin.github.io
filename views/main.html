@@ -1,0 +1,126 @@
+<div ng-show="search_block" class="section-head" id="block-check">
+   <div class="section-head__wrap">
+      <h1 class="section-head__title">Get car history</h1>
+      <div class="form-search">
+         <form id="check-head" _lpchecked="1" ng-submit="getVinInfo(vin)">
+            <div class="form-search__wrap">
+               <div class="search-block">
+                  <div class="search-block__rel search-block__rel_active" data-rel="GRZ">
+                     <input type="text" class="search-block__field js-gos" placeholder="VIN" value="" maxlength="14" id="form3162" ng-model="vin">
+                  </div>
+                  <button type="submit" id="search-block__btn" class="search-block__btn"><span>Проверить авто</span></button>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<div ng-show="result_block" class="pt-top">
+   <div class="page-wrap page-wrap_report">
+      <div class="page-wrap__wrap">
+         <div class="post-bl" style="position: relative;">
+            <div class="post-bl__main">
+               <div class="post-text">
+                  <div class="post-text__head">
+                     <div class="ls-info">
+                        <div class="ls-info__left">
+                           <h1 class="r-title" id="carType">
+                           </h1>
+                           <span class="r-date" id="r-date">
+                           Дата проверки: 14.06.2017
+                           </span>
+                        </div>
+                     </div>
+                     <div class="vin-info">
+                        <div class="vin-info__left">
+                           <b class="vin-rc" id="vinString">
+                           </b>
+                        </div>
+                     </div>
+                     <div class="vin-info">
+                        <div class="vin-info__left">
+                           <ol class="name-value" style="width: 100%;">
+                              <li>                    
+                                 <label for="about">Number of Owners:      </label>
+                                 <span id="about">1</span>
+                              </li>
+                              <li>
+                                 <label for="about">Title:</label>
+                                 <span id="Span1">Clean</span>
+                              </li>
+                              <li>
+                                 <label for="about">Milage:</label>
+                                 <span id="Span_Milage">33251</span>
+                              </li>
+                              <li>
+                                 <label for="about">Accidents:</label>
+                                 <span id="Span_Accidents">1</span>
+                              </li>
+                           </ol>
+                        </div>
+                     </div>
+                  </div>
+                    <div class="ic-info" ng-repeat = "event in vinInfo">
+                        <div class="lcn-lists lcn-lists_t1">
+                           <div class="panel-info-image">
+                              <img ng-src="img/{{event.type}}" />
+                           </div>
+                           <div class="panel-info-short">
+                              <div class="panel-info-title">
+                                 <span class="ic-info__title">
+                                 Date
+                                 </span>
+                              </div>
+                              <p>{{event.date}}</p>
+                           </div>
+                           <div class="panel-info-short">
+                              <div class="panel-info-title">
+                                 <span class="ic-info__title">
+                                 Milage
+                                 </span>
+                              </div>
+                              <p>{{event.milage}}</p>
+                           </div>
+                           <div class="panel-info-comment">
+                              <div class="panel-info-title">
+                                 <span class="ic-info__title">
+                                 Comments
+                                 </span>
+                              </div>
+                              <p>{{event.comment}}</p>
+                           </div>
+                        </div>
+                    </div>
+                  <div class="info-div">
+                     <div class="info-div__block">
+                        <!-- <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p> -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- The Modal -->
+<div id="GetAccessModal" class="modal" ng-show="get_accec_modal">
+   <!-- Modal content -->
+   <div class="contact-form">
+      <span class="close" id="close_get_access">&times;</span>
+      <div class="form-header">
+         <h3>Please get access to proceed your request!</h3>
+      </div>
+      <form ng-submit="getAccess1(vin)">
+         <input type="text" id="getAccess1_vin" ng-model="vin" style="display: none">
+         <div class="send-button">
+            <input type="submit" value="10 min (0.001 Ether)">
+         </div>
+      </form>
+      <form ng-submit="getAccess2(vin)">
+        <input type="text" id="getAccess2_vin" ng-model="vin" style="display: none">
+         <div class="send-button">
+            <input type="submit" value="20 min (0.002 Ether)">
+         </div>
+      </form>
+   </div>
+</div>
